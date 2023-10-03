@@ -1,33 +1,27 @@
-// Acesse o elemento where-are-you.
-// Acesse parent a partir de where-are-you e adicione uma color a ele.
-// Acesse o first-child-of-child e adicione um texto a ele. Você se lembra dos vídeos da aula anterior? Eles ensinam como fazer isso.
-// Acesse o first-child a partir de parent.
-// Acesse o first-child a partir de where-are-you.
-// Acesse o texto Attention! a partir de where-are-you.
-// Acesse o third-child a partir de where-are-you.
-// Acesse o third-child a partir de parent.
+/*
+Crie um irmão para elementoOndeVoceEsta.
+Crie um filho para elementoOndeVoceEsta.
+Crie um filho para primeiroFilhoDoFilho.
+A partir desse filho criado, acesse terceiroFilho.
 
-const firstRequirement = document.getElementById('where-are-you');
-// console.log(document.getElementById('where-are-you'));
-const secondRequirement = firstRequirement.parentNode;
-secondRequirement.style.color = 'black';
+*/
+let elementoSibling = document.createElement('li')
+elementoSibling.innerHTML = '<b>Deu certo!</b>';
+let elementoPai = document.getElementById('pai');
+elementoPai.appendChild(elementoSibling);
 
-const thirdRequirement = document.getElementById('first-child-of-child');
-thirdRequirement.innerText = 'Teste'
+// console.log(elementoSibling);
 
-const fourthRequirement = document.getElementById('parent');
-const parentChild = fourthRequirement.firstElementChild;
+let elementoChildren = document.createElement('li')
+elementoChildren.innerHTML = '<b>Deu certo também :)</b>';
+let fatherElement = document.getElementById('elementoOndeVoceEsta');
+fatherElement.appendChild(elementoChildren);
 
-const fifthRequirement = document.getElementById('where-are-you');
-const childParent = fifthRequirement.previousElementSibling;
+let childrenPrimeiro = document.createElement('p')
+childrenPrimeiro.innerText = 'Joinha';
+let elementFather = document.getElementById('primeiroFilhoDoFilho');
+elementFather.appendChild(childrenPrimeiro);
 
-const sixthRequirement = document.getElementById('where-are-you');
-const parentOfChild = sixthRequirement.nextSibling;
-// const childText = parentOfChild.innerText;
-
-const seventhRequirement = document.getElementById('where-are-you');
-const firstChild = seventhRequirement.nextElementSibling;
-
-const eighthRequirement = document.getElementById('parent');
-const fourthChild = eighthRequirement.lastElementChild;
-const thirdChild = fourthChild.previousElementSibling;
+let textJoinha = document.getElementsByTagName('p');
+let fatherPrimeiro = textJoinha[0].parentNode.parentNode.parentNode;
+let thirdChild = fatherPrimeiro.children[2];

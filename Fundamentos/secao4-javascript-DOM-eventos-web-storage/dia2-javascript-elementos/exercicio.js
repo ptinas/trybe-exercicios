@@ -7,11 +7,27 @@
 // Acesse o third-child a partir de where-are-you.
 // Acesse o third-child a partir de parent.
 
-const firstRequisit = document.getElementById('where-are-you');
+const firstRequirement = document.getElementById('where-are-you');
 // console.log(document.getElementById('where-are-you'));
-const secondRequisit = firstRequisit.parentElement;
-secondRequisit.style.color = 'black';
+const secondRequirement = firstRequirement.parentNode;
+secondRequirement.style.color = 'black';
 
-const thirdRequisit = document.getElementById('first-child-of-child');
-thirdRequisit.innerText = 'Teste'
+const thirdRequirement = document.getElementById('first-child-of-child');
+thirdRequirement.innerText = 'Teste'
 
+const fourthRequirement = document.getElementById('parent');
+const parentChild = fourthRequirement.firstElementChild;
+
+const fifthRequirement = document.getElementById('where-are-you');
+const childParent = fifthRequirement.previousElementSibling;
+
+const sixthRequirement = document.getElementById('where-are-you');
+const parentOfChild = sixthRequirement.nextSibling;
+// const childText = parentOfChild.innerText;
+
+const seventhRequirement = document.getElementById('where-are-you');
+const firstChild = seventhRequirement.nextElementSibling;
+
+const eighthRequirement = document.getElementById('parent');
+const fourthChild = eighthRequirement.lastElementChild;
+const thirdChild = fourthChild.previousElementSibling;

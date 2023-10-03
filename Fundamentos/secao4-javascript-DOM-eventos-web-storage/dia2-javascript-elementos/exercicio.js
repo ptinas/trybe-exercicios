@@ -28,11 +28,31 @@ let image = document.createElement('img');
 image.src = 'https://picsum.photos/200';
 image.className = 'small-image'
 leftSection.appendChild(image);
-/*
 
-Adicione uma imagem com src configurado para valor https://picsum.photos/200 e classe small-image. Esse elemento deve ser filho do section criado no 
-passo 5;
-Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um, dois, três, e assim por diante. Essa lista deve ser filha do section 
-criado no passo 6;
-Adicione 3 tags h3, todas filhas do main criado no passo 2.
-*/
+let numberList = [
+    'Um',
+    'Dois',
+    'Três',
+    'Quatro',
+    'Cinco',
+    'Seis',
+    'Sete',
+    'Oito',
+    'Nove',
+    'Dez'
+];
+let list = document.createElement('ul');
+for (let index = 0; index < numberList.length; index += 1) {
+    let li = document.createElement('li');
+    li.innerText = numberList[index];
+    list.appendChild(li);
+}
+rightSection.appendChild(list);
+
+for (let index = 0; index < 3; index += 1) {
+    let tagH3 = document.createElement('h3');
+    tagH3.innerHTML = index;
+    tagMain.appendChild(tagH3);
+}
+
+

@@ -11,20 +11,22 @@
 </head>
 
 <body>
-    <form action="" method="GET" enctype="multipart/form-data">
+    <form action="" method="GET" enctype="multipart/form-data" name="trybe">
         <h1>Exercício - HTML/CSS - Forms, Flexbox e Responsivo</h1>
-        <label for="email"> Digite e-mail e senha: </label>
+        <label for="email"> Digite seu e-mail: </label>
+        <input type="email" placeholder="Digite seu e-mail" required id="email" autofocus autocomplete="off"
+            name="inputEmail"/>
         <br>
-        <input type="email" placeholder="Digite seu e-mail" required class="email" autofocus autocomplete="off">
-        <br>
-        <input type="password" placeholder="Digite sua senha" required class="email">
+        <label for="password"> Digite sua senha: </label>
+        <input type="password" placeholder="Digite sua senha" required id="password" name="inputPassword"/>
         <br>
         <button type="submit">Enviar</button>
-        <input type="checkbox">Lembre-me
+        <input type="checkbox" name="rememberMe"/>Lembre-me
+        <br>
         <br>
         <a href="www.betrybe.com" target="_blank" id="href">TRYBE</a>
-        <input type="text" id="input-text" />
-        <input type="checkbox" id="input-checkbox" />
+        <input type="text" id="input-text" autocomplete="off"/>
+        <input type="checkbox" id="input-checkbox"/>
     </form>
 </body>
 

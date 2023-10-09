@@ -19,4 +19,4 @@ function checkLetterA(event) {
         );
     }
 }
-inputText.addEventListener('keydown', checkLetterA, false)
+inputText.addEventListener('keydown', checkLetterA)

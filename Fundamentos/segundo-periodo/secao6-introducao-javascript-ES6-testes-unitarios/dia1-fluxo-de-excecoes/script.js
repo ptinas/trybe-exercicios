@@ -1,21 +1,66 @@
-const getAverage = (number1, number2, number3, number4) => {
+// Primeira parte
+const promo = [
+  {product: 'bola de beach tennis', price: 29.99},
+  {product: 'mochila de trilha 20 litros', price: 120.99},
+  {product: 'capacete de ciclista', price: 180.59},
+  {product: 'toalha compacta de secagem', price: 39.99},
+  {product: 'kit 5 camisetas Dry Fit', price: 99.99},
+  {product: 'caneleiras de peso - 3kg (par)', price: 44.99},
+  {product: 'bola de ginástica e pilates', price: 149.59},
+  {product: 'óculos de natação', price: 18.99},
+  {product: 'capa protetora de prancha de surf', price: 89.59},
+  {product: 'bola de basquete', price: 39.99},
+];
+
+const button = document.querySelector('#send-button');
+
+button.addEventListener('click', () => {
+  const name = document.querySelector('#name-id').value;
+  const number = document.querySelector('#number-id').value;
+
+  showPromo(name, number);
+});
+
+const showPromo = (name, number) => {
+  const firstText = document.querySelector('#text-initial');
+  const secondText = document.querySelector('#text-final');
+  
   try {
-    number1 = parseInt(number1)
-    number2 = parseInt(number2)
-    number3 = parseInt(number3)
-    number4 = parseInt(number4)
-    checkNumber(number1, number2, number3, number4)
-    return (number1 + number2 + number3 + number4) / 2
-  }
-  catch (error) {
-    return error.message;
+    checkName(name);
+    checkNumber(parseInt(number));
+    const productObject = checkPromo(number);
+
+    firstText.innerHTML = `Boas-vindas, ${name}!`;
+    secondText.innerHTML = `A promoção do dia é: 
+      ${productObject.product} no valor de R$ ${productObject.price}`;
+  } catch(err) {
+    secondText.innerHTML = err.message;
+  } finally {
+  document.querySelector('#name-id').value = "";
+  document.querySelector('#number-id').value = "";
   }
 }
 
+const checkName = (name) => {
+  let letters = /[aA-zZ]+/;
+  
+  if (!name.match(letters)) {
+    throw new Error('É necessário digitar um nome válido');
+  }
+}
+
+// Segunda parte
 const checkNumber = (number) => {
   if (isNaN(number)) {
     throw new Error('É necessário digitar um número');
   }
 }
 
-console.log(getAverage('4', 3, '2', 1))
+// Terceira parte
+const checkPromo = (number) => {
+  for (let index = 0; index < promo.length; index += 1) {
+    if (number - 1 === index) {
+      return promo[index];
+    }
+  }
+}
